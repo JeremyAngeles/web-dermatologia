@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import fondoHero from '../assets/image_9f887b.jpg'; 
+// AQUÍ ESTÁ EL CAMBIO: Apuntando a portada.png
+import fondoHero from '../assets/portada.png'; 
 
 function Hero() {
   return (
