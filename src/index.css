@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 1. Cargamos la Tipografía Principal */
+@font-face {
+  font-family: 'Henotica';
+  src: url('./assets/fonts/Henotica.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 2. Cargamos la Tipografía Secundaria */
+@font-face {
+  font-family: 'AvantGarde';
+  src: url('./assets/fonts/ITCAvantGardeStd-XLtObl.ttf') format('truetype');
+  font-weight: 200; /* Extra light */
+  font-style: italic; /* Oblique (cursiva) */
+  font-display: swap;
+}
+html {
+  scroll-behavior: smooth;
+}
+/* 3. Estilos base del body usando tus colores */
+body {
+  background-color: theme('colors.karen-arena');
+  color: theme('colors.karen-gris');
+  font-family: theme('fontFamily.secundaria');
+  margin: 0;
+}
