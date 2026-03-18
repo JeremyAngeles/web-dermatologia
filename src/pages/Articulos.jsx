@@ -57,7 +57,7 @@ export default function Articulos() {
 
   return (
     <>
-      {/* Fuentes */}
+      {/* Fuentes y Estilos Responsivos */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
 
@@ -83,11 +83,80 @@ export default function Articulos() {
 
         .cta-btn-main { transition: opacity 0.2s; }
         .cta-btn-main:hover { opacity: 0.75; }
+
+        /* --- CLASES RESPONSIVAS --- */
+        .page-container {
+          padding: 180px 34px 90px;
+        }
+
+        .featured-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2px;
+          background: #e0ddd8;
+          border-radius: 16px 16px 0 0;
+          overflow: hidden;
+        }
+
+        .bottom-strip {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2px;
+          background: #e0ddd8;
+          border-radius: 0 0 16px 16px;
+          overflow: hidden;
+          margin-bottom: 64px;
+        }
+
+        .cta-container {
+          background: #fff;
+          border: 0.5px solid #e0ddd8;
+          border-radius: 20px;
+          padding: 52px 56px;
+          display: grid;
+          grid-template-columns: 1fr auto;
+          align-items: center;
+          gap: 40px;
+        }
+
+        /* --- ADAPTACIÓN A CELULARES --- */
+        @media (max-width: 768px) {
+          .page-container {
+            padding: 140px 20px 60px;
+          }
+          
+          .featured-grid {
+            grid-template-columns: 1fr; /* 1 sola columna en celular */
+          }
+
+          .bottom-strip {
+            grid-template-columns: 1fr; /* 1 sola columna en celular */
+            border-radius: 0 0 16px 16px;
+          }
+
+          /* El contenedor del CTA ahora se apila y se centra */
+          .cta-container {
+            grid-template-columns: 1fr;
+            text-align: center;
+            padding: 40px 24px;
+            gap: 24px;
+          }
+
+          .cta-container p {
+            margin: 0 auto !important;
+          }
+
+          .cta-btn-main {
+            justify-self: center;
+            width: 100%;
+            max-width: 250px;
+          }
+        }
       `}</style>
 
       <div
-        className="articulos-page font-body"
-        style={{ background: '#f7f5f1', minHeight: '100vh', padding: '180px 34px 90px' }}
+        className="articulos-page font-body page-container"
+        style={{ background: '#f7f5f1', minHeight: '100vh' }}
       >
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
 
@@ -152,11 +221,8 @@ export default function Articulos() {
             <div style={{ flex: 1, height: '0.5px', background: '#e0ddd8' }} />
           </div>
 
-          {/* ── FEATURED GRID ── */}
-          <div style={{
-            display: 'grid', gridTemplateColumns: '1fr 1fr',
-            gap: 2, background: '#e0ddd8', borderRadius: '16px 16px 0 0', overflow: 'hidden'
-          }}>
+          {/* ── FEATURED GRID (Ahora responsivo por la clase de CSS) ── */}
+          <div className="featured-grid">
             {/* Main article */}
             <div className="card-img-zoom" style={{ position: 'relative', minHeight: 460, cursor: 'pointer', overflow: 'hidden' }}>
               <img src={mainArticle.imagen} alt={mainArticle.titulo} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
@@ -190,12 +256,8 @@ export default function Articulos() {
             </div>
           </div>
 
-          {/* ── BOTTOM STRIP ── */}
-          <div style={{
-            display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: 2, background: '#e0ddd8',
-            borderRadius: '0 0 16px 16px', overflow: 'hidden', marginBottom: 64
-          }}>
+          {/* ── BOTTOM STRIP (Responsivo) ── */}
+          <div className="bottom-strip">
             {strips.map((s, i) => (
               <div key={i} className="strip-item-hover" style={{ background: '#fff', padding: 28, cursor: 'pointer' }}>
                 <span className="font-display" style={{ fontSize: 36, fontWeight: 300, color: '#ddd', lineHeight: 1, display: 'block', marginBottom: 12 }}>{s.num}</span>
@@ -205,12 +267,8 @@ export default function Articulos() {
             ))}
           </div>
 
-          {/* ── CTA ── */}
-          <div style={{
-            background: '#fff', border: '0.5px solid #e0ddd8', borderRadius: 20,
-            padding: '52px 56px', display: 'grid', gridTemplateColumns: '1fr auto',
-            alignItems: 'center', gap: 40
-          }}>
+          {/* ── CTA (Ahora Centrado y Responsivo) ── */}
+          <div className="cta-container">
             <div>
               <span style={{ fontSize: 10, letterSpacing: '0.4em', textTransform: 'uppercase', color: '#aaa', display: 'block', marginBottom: 14 }}>¿Tienes dudas?</span>
               <h2 className="font-display" style={{ fontSize: 44, fontWeight: 300, fontStyle: 'italic', color: '#2a2a2a', margin: '0 0 12px', lineHeight: 1.1 }}>
@@ -232,12 +290,9 @@ export default function Articulos() {
             </button>
           </div>
         
-        
         </div>
-        
-       
       </div>
-       <Footer />
+      <Footer />
     </>
   );
 }

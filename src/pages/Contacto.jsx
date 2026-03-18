@@ -119,7 +119,7 @@ const Contacto = () => {
         </section>
 
         {/* 3. EL MAPA CON BOTÓN EN LA ESQUINA SUPERIOR DERECHA */}
-        <section className="bg-white rounded-[2rem] md:rounded-[3rem] shadow-xl border border-[#e0dcd1]/50 p-8 md:p-12 flex flex-col gap-8 mb-20">
+        <section className="bg-white rounded-[2rem] md:rounded-[3rem] shadow-xl border border-[#e0dcd1]/50 p-8 md:p-12 flex flex-col gap-8 mb-8 md:mb-20">
           
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
             
@@ -187,8 +187,9 @@ const Contacto = () => {
 
       </main>
 
-      {/* BLOQUE DE SEPARACIÓN FINAL (Para que el footer no toque el mapa) */}
-      <div className="h-24 md:h-0 w-full shrink-0"></div>
+      {/* BLOQUE DE SEPARACIÓN FINAL CORREGIDO */}
+      {/* Reducido a h-6 en móvil, se mantiene invisible/cero en escritorio */}
+      <div className="h-6 md:h-0 w-full shrink-0"></div>
 
       <Footer />
       
