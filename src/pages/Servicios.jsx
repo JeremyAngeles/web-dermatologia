@@ -8,7 +8,7 @@ import imgAcne from '../assets/servicio-acne.webp';
 import imgRejuv from '../assets/estetica-facial-profesional.webp';
 import imgManchas from '../assets/servicio-manchas.jpg';
 import imgClinica from '../assets/clinica-dermatologica-karen.jpg';
-import imgLunares from '../assets/image_9f887b.jpg'; 
+import imgLunares from '../assets/portada.png'; 
 import imgLaser from '../assets/tecnologia-laser-dermatologica.jpg';
 
 const Servicios = () => {
