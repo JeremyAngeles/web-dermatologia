@@ -19,14 +19,13 @@ function Footer() {
             <img 
               src={logoFooter} 
               alt="Logo Dra. Karen Angeles" 
-              className="h-28 mb-6 object-contain filter brightness-0 invert" 
+              className="h-30  mb-6 object-contain filter brightness-0 invert" 
             />
             <h3 className="font-principal text-3xl mb-2">Dra. Karen Angeles</h3>
             <p className="font-secundaria text-sm font-light opacity-80 leading-relaxed mb-6">
               Especialista en dermatología clínica y estética. Cuidando la salud y belleza de tu piel con tratamientos personalizados y tecnología de vanguardia.
             </p>
             <div className="flex items-center gap-4">
-              {/* ENLACE INSTAGRAM */}
               <a 
                 href="https://www.instagram.com/derma.karenangeles/" 
                 target="_blank"
@@ -35,7 +34,6 @@ function Footer() {
               >
                 <Instagram size={18} />
               </a>
-              {/* ENLACE TIKTOK */}
               <a 
                 href="https://www.tiktok.com/@derma.karenangeles?_r=1&_t=ZS-94OTkKYVYKA" 
                 target="_blank"
@@ -47,28 +45,38 @@ function Footer() {
             </div>
           </div>
 
-          {/* Columna 2: Enlaces Rápidos */}
+          {/* Columna 2: Enlaces Rápidos (ACTUALIZADA) */}
           <div>
             <h4 className="font-principal text-xl mb-6 text-[#e0dcd1]">Explorar</h4>
-            <ul className="space-y-4 font-secundaria font-light text-sm opacity-90">
+            <ul className="space-y-3 font-secundaria font-light text-sm opacity-90">
               <li>
                 <Link to="/" className="hover:text-[#e0dcd1] transition-colors flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-[#e0dcd1] rounded-full"></span> Inicio
+                  <span className="w-1 h-1 bg-[#e0dcd1] rounded-full"></span> Inicio
+                </Link>
+              </li>
+              <li>
+                <Link to="/nosotros" className="hover:text-[#e0dcd1] transition-colors flex items-center gap-2">
+                  <span className="w-1 h-1 bg-[#e0dcd1] rounded-full"></span> Nosotros
                 </Link>
               </li>
               <li>
                 <Link to="/servicios" className="hover:text-[#e0dcd1] transition-colors flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-[#e0dcd1] rounded-full"></span> Servicios
+                  <span className="w-1 h-1 bg-[#e0dcd1] rounded-full"></span> Servicios
                 </Link>
               </li>
               <li>
                 <Link to="/productos" className="hover:text-[#e0dcd1] transition-colors flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-[#e0dcd1] rounded-full"></span> Tienda Skincare
+                  <span className="w-1 h-1 bg-[#e0dcd1] rounded-full"></span> Tienda Skincare
+                </Link>
+              </li>
+              <li>
+                <Link to="/articulos" className="hover:text-[#e0dcd1] transition-colors flex items-center gap-2">
+                  <span className="w-1 h-1 bg-[#e0dcd1] rounded-full"></span> Artículos
                 </Link>
               </li>
               <li>
                 <Link to="/contacto" className="hover:text-[#e0dcd1] transition-colors flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-[#e0dcd1] rounded-full"></span> Contacto
+                  <span className="w-1 h-1 bg-[#e0dcd1] rounded-full"></span> Contacto
                 </Link>
               </li>
             </ul>
@@ -79,16 +87,16 @@ function Footer() {
             <h4 className="font-principal text-xl mb-6 text-[#e0dcd1]">Contacto</h4>
             <ul className="space-y-4 font-secundaria font-light text-sm opacity-90">
               <li className="flex items-start gap-3">
-                <MapPin size={18} className="shrink-0 mt-0.5" />
+                <MapPin size={18} className="shrink-0 mt-0.5 text-[#e0dcd1]" />
                 <span>Av. San Felipe 1001<br/>Jesús María, Lima</span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone size={18} className="shrink-0" />
+                <Phone size={18} className="shrink-0 text-[#e0dcd1]" />
                 <span>+51 933 698 990</span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail size={18} className="shrink-0" />
-                <span>citas@drakarenangeles.com</span> {/* Cambia este correo si la doctora tiene uno oficial */}
+                <Mail size={18} className="shrink-0 text-[#e0dcd1]" />
+                <span>citas@drakarenangeles.com</span>
               </li>
             </ul>
           </div>
@@ -98,14 +106,14 @@ function Footer() {
             <h4 className="font-principal text-xl mb-6 text-[#e0dcd1]">Horarios de Atención</h4>
             <ul className="space-y-4 font-secundaria font-light text-sm opacity-90">
               <li className="flex items-start gap-3">
-                <Clock size={18} className="shrink-0 mt-0.5" />
+                <Clock size={18} className="shrink-0 mt-0.5 text-[#e0dcd1]" />
                 <div>
                   <p className="font-bold">Lunes a Viernes</p>
                   <p>09:00 am - 07:00 pm</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <Clock size={18} className="shrink-0 mt-0.5 opacity-0" /> {/* Icono invisible para alinear */}
+                <Clock size={18} className="shrink-0 mt-0.5 opacity-0" />
                 <div>
                   <p className="font-bold">Sábados</p>
                   <p>09:00 am - 01:00 pm</p>
@@ -127,13 +135,13 @@ function Footer() {
 
         {/* Copyright y Legales */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 font-secundaria text-xs font-light opacity-70">
-          <p className="tracking-[0.1em] text-center md:text-left">
-            © {currentYear} DRA. KAREN ANGELES. TODOS LOS DERECHOS RESERVADOS.
+          <p className="tracking-[0.1em] text-center md:text-left uppercase">
+            © {currentYear} Dra. Karen Angeles. Todos los derechos reservados.
           </p>
           <div className="flex gap-4 tracking-wider">
-            <Link to="#" className="hover:text-white transition-colors">Políticas de Privacidad</Link>
+            <Link to="#" className="hover:text-white transition-colors">Privacidad</Link>
             <span>|</span>
-            <Link to="#" className="hover:text-white transition-colors">Términos y Condiciones</Link>
+            <Link to="#" className="hover:text-white transition-colors">Términos</Link>
           </div>
         </div>
 
