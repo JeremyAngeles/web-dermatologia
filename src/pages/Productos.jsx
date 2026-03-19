@@ -8,6 +8,22 @@ const Productos = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  // Función para redirigir al WhatsApp con mensaje personalizado del producto
+  const comprarPorWhatsApp = (nombreProducto) => {
+    const numero = "51933698990"; 
+    const mensaje = `¡Hola Dra. Karen! Vengo de su página web y deseo adquirir el producto: ${nombreProducto}.`;
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, '_blank');
+  };
+
+  // Función para el botón de asesoría al final de la página
+  const agendarAsesoriaWhatsApp = () => {
+    const numero = "51933698990"; 
+    const mensaje = "¡Hola Dra. Karen! Vengo de su página web y deseo agendar una consulta para saber qué productos necesita mi piel.";
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, '_blank');
+  };
+
   // Base de datos simulada con imágenes temporales de alta calidad (Unsplash)
   const listaProductos = [
     {
@@ -126,7 +142,10 @@ const Productos = () => {
                   
                   {/* Botón flotante de compra (Aparece en hover) */}
                   <div className="absolute inset-0 bg-white/30 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20">
-                    <button className="bg-[#7c8f7c] text-white font-bold tracking-widest text-[10px] uppercase py-3 px-8 rounded-full shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                    <button 
+                      onClick={() => comprarPorWhatsApp(prod.nombre)} // <-- Agregada función aquí
+                      className="bg-[#7c8f7c] text-white font-bold tracking-widest text-[10px] uppercase py-3 px-8 rounded-full shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"
+                    >
                       Lo Quiero
                     </button>
                   </div>
@@ -164,7 +183,10 @@ const Productos = () => {
           <p className="font-secundaria text-[#606060]/80 font-light mb-10 max-w-xl mx-auto leading-relaxed">
             Cada piel cuenta una historia diferente. Agenda una consulta dermatológica y diseñemos juntos una rutina clínica exacta para las necesidades de tu piel.
           </p>
-          <button className="bg-[#7c8f7c] text-white font-bold tracking-widest text-xs uppercase py-4 px-10 rounded-full hover:bg-[#606060] hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-[#7c8f7c]/20">
+          <button 
+            onClick={agendarAsesoriaWhatsApp} // <-- Agregada función aquí
+            className="bg-[#7c8f7c] text-white font-bold tracking-widest text-xs uppercase py-4 px-10 rounded-full hover:bg-[#606060] hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-[#7c8f7c]/20"
+          >
             Agendar Consulta
           </button>
         </div>

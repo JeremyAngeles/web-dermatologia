@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-// Asegúrate de que las rutas a las imágenes sean correctas
+// IMPORTACIÓN DE IMÁGENES
 import fotoDra from '../assets/foto-doctora.jpg'; 
 import logoUNMSM from '../assets/unmsm-removebg-preview.png'; 
+import imgHospital from '../assets/fto.jpg'; // <-- FOTO DEL HOSPITAL
+import imgCiladerm from '../assets/foto.jpg'; // <-- FOTO DEL PROGRAMA CILADERM
 import Footer from '../components/Footer'; 
 
 const SobreMi = () => {
@@ -87,7 +89,7 @@ const SobreMi = () => {
       {/* =========================================================
           2. SECCIÓN: TRAYECTORIA Y FORMACIÓN (Fondo Arena)
           ========================================================= */}
-      <section className="relative pt-16 pb-24 md:pt-20 md:pb-32 bg-[#e0dcd1]/40 px-6 overflow-hidden">
+      <section className="relative pt-16 pb-24 md:pt-20 md:pb-40 bg-[#e0dcd1]/40 px-6 overflow-hidden">
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -120,7 +122,7 @@ const SobreMi = () => {
                   Actualización Médica Continua
                 </h3>
                 <p className="text-sm md:text-base leading-relaxed">
-                  La dermatología es una ciencia en constante evolución. Por ello, mantengo una participación activa en diplomados y congresos mundiales. Mi compromiso es garantizar que mis pacientes de Lima Este accedan a las técnicas más innovadoras, eficaces y seguras.
+                  La dermatología es una ciencia en constante evolución. Por ello, mantengo una participación activa en diplomados y congresos mundiales. Mi compromiso es garantizar que mis pacientes accedan a las técnicas más innovadoras, eficaces y seguras.
                 </p>
               </div>
             </div>
@@ -139,9 +141,65 @@ const SobreMi = () => {
                 </p>
               </div>
             </div>
-
           </div>
         </motion.div>
+
+        {/* =======================================================
+            NUEVOS HITOS: HOSPITAL Y CILADERM
+            ======================================================= */}
+        <div className="mt-32 max-w-6xl mx-auto space-y-24 relative z-10">
+
+          {/* HITO 1: Hospital Almenara (Foto a la izquierda) */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-50px" }}
+            className="flex flex-col md:flex-row items-center gap-10 lg:gap-16"
+          >
+            <div className="w-full md:w-1/2 relative group">
+              <div className="absolute inset-0 bg-white rounded-[2.5rem] transform -rotate-3 group-hover:-rotate-6 transition-transform duration-500 shadow-sm"></div>
+              <img src={imgHospital} alt="Hospital Nacional Guillermo Almenara" className="relative z-10 w-full h-72 md:h-80 object-cover rounded-[2.5rem] shadow-xl group-hover:scale-[1.02] transition-transform duration-500" />
+            </div>
+            <div className="w-full md:w-1/2 text-center md:text-left">
+              <span className="text-[#7c8f7c] font-bold tracking-[0.3em] text-[10px] uppercase block mb-3">
+                Especialización Clínica
+              </span>
+              <h3 className="font-principal text-3xl md:text-4xl text-[#606060] mb-5 leading-tight">
+                Hospital Nacional <br/> Guillermo Almenara
+              </h3>
+              <p className="font-secundaria text-[#606060] text-sm md:text-base leading-relaxed font-light">
+                Completé mi residencia médica en Dermatología en uno de los centros hospitalarios de mayor rigor, exigencia y prestigio a nivel nacional. Durante estos años de intensa formación clínica y quirúrgica, tuve la oportunidad de tratar una vasta diversidad de patologías cutáneas, consolidando mi experiencia en el diagnóstico certero y el manejo de casos de alta complejidad.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* HITO 2: Beca CILADERM (Foto a la derecha) */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-50px" }}
+            className="flex flex-col md:flex-row-reverse items-center gap-10 lg:gap-16"
+          >
+            <div className="w-full md:w-1/2 relative group">
+              <div className="absolute inset-0 bg-white rounded-[2.5rem] transform rotate-3 group-hover:rotate-6 transition-transform duration-500 shadow-sm"></div>
+              <img src={imgCiladerm} alt="Programa CILADERM Excelencia" className="relative z-10 w-full h-72 md:h-80 object-cover rounded-[2.5rem] shadow-xl group-hover:scale-[1.02] transition-transform duration-500" />
+            </div>
+            <div className="w-full md:w-1/2 text-center md:text-right">
+              <span className="text-[#7c8f7c] font-bold tracking-[0.3em] text-[10px] uppercase block mb-3">
+                Reconocimiento Internacional
+              </span>
+              <h3 className="font-principal text-3xl md:text-4xl text-[#606060] mb-5 leading-tight">
+                Beca CILADERM <br/> Excelencia 2023
+              </h3>
+              <p className="font-secundaria text-[#606060] text-sm md:text-base leading-relaxed font-light">
+                Como resultado de mi dedicación y excelencia académica, tuve el honor de ser seleccionada como becaria de este prestigioso programa internacional. Esta invaluable experiencia me permitió compartir conocimientos, técnicas y visiones con los médicos residentes más destacados de toda Ibero-Latinoamérica, enriqueciendo mi práctica con estándares globales de vanguardia.
+              </p>
+            </div>
+          </motion.div>
+
+        </div>
 
         {/* ONDA INFERIOR: Arena -> Blanco */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
@@ -156,7 +214,6 @@ const SobreMi = () => {
           ========================================================= */}
       <section className="relative pt-16 pb-48 px-6 bg-white overflow-hidden flex-grow">
         
-        {/* Agregamos relative z-10 aquí para que todo el contenido flote sobre la onda */}
         <div className="max-w-7xl mx-auto relative z-10">
           
           <div className="text-center mb-16">
@@ -196,7 +253,7 @@ const SobreMi = () => {
           </div>
         </div>
 
-        {/* ONDA INFERIOR: Blanco -> Verde (Esta es la que estaba estorbando, ahora tiene z-0 implicito por no declararlo) */}
+        {/* ONDA INFERIOR: Blanco -> Verde */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
           <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-[calc(100%+1.3px)] h-[80px] md:h-[120px] fill-[#7c8f7c]">
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
