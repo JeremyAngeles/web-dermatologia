@@ -44,12 +44,12 @@ function Hero() {
 
           {/* Título Principal Minimalista */}
           <h1 className="font-principal text-5xl md:text-7xl lg:text-8xl text-white leading-[1.1] mb-8 drop-shadow-md">
-            Piel <span className="text-white/50 font-light mx-2 md:mx-4">|</span> Uñas <span className="text-white/50 font-light mx-2 md:mx-4">|</span> Cabello
-          </h1>
+  El Arte de Cuidar <br className="hidden md:block" /> tu Piel
+</h1>
           
           {/* Descripción */}
           <p className="font-secundaria text-white/80 text-sm md:text-xl mb-12 font-light max-w-2xl mx-auto leading-relaxed drop-shadow-sm flex items-center justify-center gap-3">
-            <span className="opacity-90">🏃🏻‍♀️</span>
+            <span className="opacity-90"></span>
             <span>Salud de la piel. Descubre tratamientos personalizados con tecnología médica de vanguardia.</span>
           </p>
           
