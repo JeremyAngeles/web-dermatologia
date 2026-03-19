@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 // Asegúrate de que las rutas a las imágenes sean correctas
-import fotoDra from '../assets/doctora.jpg'; 
+import fotoDra from '../assets/foto-doctora.jpg'; 
 import logoUNMSM from '../assets/unmsm-removebg-preview.png'; 
 import Footer from '../components/Footer'; 
 

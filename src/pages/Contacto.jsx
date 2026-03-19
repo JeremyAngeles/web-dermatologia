@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Instagram, MessageCircle, Clock } from 'lucide-react';
 import Footer from '../components/Footer';
-import fotoDra from '../assets/doctora.jpg';
+import fotoDra from '../assets/foto-doctora.jpg';
 
 const Contacto = () => {
   useEffect(() => {
@@ -46,7 +46,7 @@ const Contacto = () => {
               Reserva tu consulta personalizada con la Dra. Karen Angeles y empieza el cambio hoy.
             </p>
             <a 
-              href="https://wa.me/51999999999" 
+              href="https://wa.me/51933698990?text=¡Hola!%20Deseo%20agendar%20una%20cita%20médica." 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-[10px] font-bold tracking-[0.25em] uppercase border border-white/40 rounded-full py-4 px-8 w-full hover:bg-white hover:text-[#7c8f7c] transition-all duration-300 shadow-lg"
@@ -65,7 +65,7 @@ const Contacto = () => {
               Consulta stock y envíos de nuestra exclusiva línea dermo-cosmética clínica.
             </p>
             <a 
-              href="https://wa.me/51999999998" 
+              href="https://wa.me/51933698990?text=¡Hola!%20Deseo%20información%20sobre%20sus%20productos." 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-[10px] font-bold tracking-[0.25em] uppercase border border-[#7c8f7c]/30 text-[#7c8f7c] rounded-full py-4 px-8 w-full hover:bg-[#7c8f7c] hover:text-white transition-all duration-300 shadow-md"
@@ -95,20 +95,22 @@ const Contacto = () => {
             {/* Redes Sociales Estilo "Lujo Minimal" */}
             <div className="w-full pt-8 border-t border-[#606060]/10 flex flex-col items-center gap-4">
               <span className="text-[9px] font-bold tracking-[0.4em] uppercase text-[#7c8f7c]/70">Síguenos</span>
-              <div className="flex justify-center gap-8">
+              <div className="flex justify-center items-center gap-8">
+                {/* ENLACE REAL A INSTAGRAM */}
                 <a 
-                  href="https://instagram.com" 
+                  href="https://www.instagram.com/derma.karenangeles/" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="text-[#606060] hover:text-[#7c8f7c] transition-all duration-300 transform hover:scale-125"
                 >
                   <Instagram size={24} strokeWidth={1.2} />
                 </a>
+                {/* ENLACE REAL A TIKTOK */}
                 <a 
-                  href="https://tiktok.com" 
+                  href="https://www.tiktok.com/@derma.karenangeles?_r=1&_t=ZS-94OTkKYVYKA" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-[#606060] hover:text-[#7c8f7c] transition-all duration-300 transform hover:scale-125 font-bold text-xl"
+                  className="text-[#606060] hover:text-[#7c8f7c] transition-all duration-300 transform hover:scale-125 font-bold text-xl leading-none flex items-center justify-center h-6"
                 >
                   TK
                 </a>
